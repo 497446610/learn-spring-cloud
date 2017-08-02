@@ -15,7 +15,7 @@ import com.dbuyer.springboot.properties.MyParams;
 public class HelloController {
 
 	@Autowired
-	MyParams myparams;
+	MyParams params;
 
 	/**
 	 * 
@@ -29,6 +29,11 @@ public class HelloController {
 
 	@RequestMapping("/myparams")
 	public String myparams() {
-		return "自定义参数：" + myparams.getWhoami() + "," + myparams.getAge();
+		return "自定义参数：" + params.getWhoami() + "," + params.getAge() + "<br/>" + params.getDescrit();
+	}
+
+	@RequestMapping("/allparams")
+	public String allparams() {
+		return params.toString();
 	}
 }
