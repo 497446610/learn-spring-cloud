@@ -292,3 +292,4 @@ RemoteSystemsTempFiles/.project
 .metadata/.plugins/org.eclipse.m2e.core/nexus/b8482814dc6eb7cd845dd2d191d1c8a1/_1s.cfs
 .metadata/.plugins/org.eclipse.m2e.core/nexus/b8482814dc6eb7cd845dd2d191d1c8a1/_1t.cfs
 .metadata/.plugins/org.eclipse.m2e.core/nexus/b8482814dc6eb7cd845dd2d191d1c8a1/segments_1p
+.metadata/.plugins/org.eclipse.debug.core/.launches/SpringbootApplication.launch
