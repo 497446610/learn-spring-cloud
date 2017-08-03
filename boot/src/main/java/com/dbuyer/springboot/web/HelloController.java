@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dbuyer.springboot.aop.DemoAnnotationService;
+import com.dbuyer.springboot.aop.DemoMethodService;
 import com.dbuyer.springboot.properties.MyParams;
 
 /**
@@ -16,6 +18,12 @@ public class HelloController {
 
 	@Autowired
 	MyParams params;
+
+	@Autowired
+	DemoAnnotationService demoAnnotationService;
+
+	@Autowired
+	DemoMethodService demoMethodService;
 
 	/**
 	 * 
@@ -36,4 +44,12 @@ public class HelloController {
 	public String allparams() {
 		return params.toString();
 	}
+
+	@RequestMapping("/aspect")
+	public String aspect() {
+		demoAnnotationService.add();
+		demoMethodService.add();
+		return "请查看控制台的输出。";
+	}
+
 }
