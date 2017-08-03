@@ -45,6 +45,13 @@ public class HelloController {
 		return params.toString();
 	}
 
+	/**
+	 * 
+	 * 功能说明：测试AOP拦截
+	 * 
+	 * @author 况小锋
+	 * @return 请查看控制台的输出。
+	 */
 	@RequestMapping("/aspect")
 	public String aspect() {
 		demoAnnotationService.add();
