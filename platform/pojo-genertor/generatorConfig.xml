@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- 设置数据库取得jar保路径 -->
+	<classPathEntry
+		location="E:\hcdog\platform\pc.07\libs\libs\mysql-connector-java-5.1.19.jar" />
+	<context id="merch">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+
+		<!--指明数据库的用于标记数据库对象名的符号，MYSQL默认是`反引号； -->
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection connectionURL="jdbc:mysql://192.168.0.100/hcdog_online_v10"
+			driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.lbh360.platform.base.dao.domain.merch"
+			targetProject="pojo-genertor">
+		</javaModelGenerator>
+
+		<!-- 生成mapper.xml文件 -->
+		<sqlMapGenerator targetPackage="com.lbh360.platform.base.dao.domain.merch"
+			targetProject="pojo-genertor">
+		</sqlMapGenerator>
+
+		<!-- 生成Mapper.java类 -->
+		<javaClientGenerator targetPackage="com.lbh360.platform.dao.mapper.merch"
+			targetProject="pojo-genertor" type="XMLMAPPER" />
+
+		<table tableName="merch_base_info" domainObjectName="MerchBaseInfo"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false">
+			<columnOverride column="level1code" property="level1Code" />
+			<columnOverride column="level2code" property="level2Code" />
+			<columnOverride column="unitname" property="unitName" />
+			<columnOverride column="packsize" property="packSize" />
+			<columnOverride column="isonline" property="isOnline" />
+			<columnOverride column="istrans" property="isTrans" />
+			<columnOverride column="beforetimes" property="beforeTimes" />
+			<columnOverride column="aftertimes" property="afterTimes" />
+			<columnOverride column="headurl" property="headURL" />
+			<columnOverride column="smallheadurl" property="smallHeadURL" />
+			<columnOverride column="costprice" property="costPrice" />
+			<columnOverride column="markprice" property="markPrice" />
+			<columnOverride column="starttime" property="startTime" />
+			<columnOverride column="minnum" property="minNum" />
+			<columnOverride column="totalnum" property="totalNum" />
+			<columnOverride column="limitnum" property="limitNum" />
+			<columnOverride column="createtime" property="createTime" />
+			<columnOverride column="secprice" property="secPrice" />
+			<columnOverride column="secunitname" property="secUnitName" />
+			<columnOverride column="isstand" property="isStand" />
+			<columnOverride column="linkmerchid" property="linkMerchId" />
+		</table>
+
+	</context>
+</generatorConfiguration>
