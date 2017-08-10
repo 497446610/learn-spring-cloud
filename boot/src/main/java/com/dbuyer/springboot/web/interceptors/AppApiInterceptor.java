@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
  * @history
  * 
  */
-@SuppressWarnings({ "rawtypes", "unchecked" })
 public class AppApiInterceptor implements HandlerInterceptor {
 
 	private Logger logger = Logger.getLogger(AppApiInterceptor.class);

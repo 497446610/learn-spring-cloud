@@ -58,5 +58,10 @@ public class HelloController {
 		demoMethodService.add();
 		return "请查看控制台的输出。";
 	}
+	
+	@RequestMapping("convert")
+	public ControllerAjaxResult convert(){
+		return  new ControllerAjaxResult("success","保存成功！",null);
+	}
 
 }

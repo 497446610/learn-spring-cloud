@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<classPathEntry
+		location="E:\hcdog\platform\pc.07\libs\libs\mysql-connector-java-5.1.19.jar" />
+	<context id="context1">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+
+		<!--指明数据库的用于标记数据库对象名的符号，MYSQL默认是`反引号； -->
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<jdbcConnection connectionURL="jdbc:mysql://192.168.0.100/hcdog_online_v10"
+			driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+
+
+		<!-- targetProject:生成PO类的位置 -->
+		<javaModelGenerator targetPackage="com.dbuyer.dao.domain"
+			targetProject="boot">
+		</javaModelGenerator>
+
+
+		<sqlMapGenerator targetPackage="com.dbuyer.dao.mapper"
+			targetProject="boot">
+		</sqlMapGenerator>
+
+		<javaClientGenerator targetPackage="com.dbuyer.dao.mapper"
+			targetProject="boot" type="XMLMAPPER" />
+
+		<table tableName="m_member" domainObjectName="MemberInfo"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false">
+			<columnOverride column="member_id" property="memberId" />
+		</table>
+
+	</context>
+</generatorConfiguration>

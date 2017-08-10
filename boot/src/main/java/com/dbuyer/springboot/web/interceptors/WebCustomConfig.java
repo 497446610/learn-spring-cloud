@@ -18,6 +18,12 @@ public class WebCustomConfig extends WebMvcConfigurerAdapter {
 		registry.addInterceptor(new AppApiInterceptor()).addPathPatterns("/**");
 
 	}
-	
+/*
+	@Bean
+	public HttpMessageConverters customConverters() {
+		HttpMessageConverter<ControllerAjaxResult> additional = new UTF8ControllalAjaxResultHttpMessageConverter();
+		UTF8StringHttpMessageConverter     additional2 = new UTF8StringHttpMessageConverter();
+		return new HttpMessageConverters(additional,additional2);
+	}*/
 
 }
