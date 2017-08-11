@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lbh360.platform.base.common.ServiceErrorCode;
 import com.lbh360.platform.base.dao.domain.merch.MerchBaseInfo;
@@ -51,13 +52,19 @@ public class MerchServiceImpl implements IMerchService {
 		return result;
 	}
 
+	
 	@Override
+	@Transactional
 	public void addMerchBaseInfo(MerchBaseInfoBean merchbaseInfo) throws ServiceException {
 		MerchBaseInfo record = new MerchBaseInfo();
 		try {
+			
+			merchBaseInfoMapper.deleteByPrimaryKey(3355L);
+			
 			BeanUtils.copyProperties(record, merchbaseInfo);
 			merchBaseInfoMapper.insert(record);
 			merchbaseInfo.setId(record.getId());
+			//throw new ServiceException(ServiceErrorCode.ADD.toString(), "测试异常事务！");
 		} catch (Exception e) {
 			throw new ServiceException(ServiceErrorCode.ADD.toString(), "保存商品信息出现异常！");
 		}
