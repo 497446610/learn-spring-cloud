@@ -12,8 +12,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.lbh360.platform.base.dao.domain.merch.MerchBaseInfo;
+import com.lbh360.platform.base.service.bean.merch.MerchBaseInfoBean;
 import com.lbh360.platform.service.merch.IMerchService;
+import com.pt.core.utils.Page;
 
 /*import com.dbuyer.springboot.jpa.order.MemberInfo;
 import com.dbuyer.springboot.jpa.order.MemberInfoRepository;
@@ -34,9 +35,9 @@ public class SpringbootApplicationTests2 {
 		
 		Map<String, Object> condition = new HashMap<>();
 		
-		List<MerchBaseInfo> list =  merchService.queryMerchInfo4Restaurant(condition, null);
-		for (MerchBaseInfo merchBaseInfo : list) {
-			System.out.println(merchBaseInfo.getName());
+		List<MerchBaseInfoBean> list =  merchService.queryMerchInfo4Restaurant(condition, null,new Page(1, 10));
+		for (MerchBaseInfoBean merchBaseInfoBean : list) {
+			System.out.println(merchBaseInfoBean.getName());
 		}
 	}
 }
